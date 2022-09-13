@@ -30,8 +30,8 @@ import ListToolbar from "@/lib/table/ListToolbar";
 import SearchNotFound from "@/lib/table/SearchNotFound";
 // import OwnerMoreMenu from "./OwnerMoreMenu";
 import imagesicon from "../../../public/images/NoImage.png";
-import OwnerName from "./components/OwnerName";
-import BranchMoreMenu from "./components/BranchMoreMenu";
+import OwnerName from "@/components/auth/branch/OwnerName";
+import BranchMoreMenu from "@/components/auth/branch/BranchMoreMenu";
 
 const TABLE_HEAD = [
   { id: "branch_name", label: "ชื่อสาขา", alignRight: true },

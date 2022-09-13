@@ -27,8 +27,8 @@ import Scrollbar from "@/lib/table/Scrollbar";
 import ListHead from "@/lib/table/ListHead";
 import ListToolbar from "@/lib/table/ListToolbar";
 import SearchNotFound from "@/lib/table/SearchNotFound";
-import AdminMoreMenu from "./AdminMoreMenu";
-import DialogCreateAdmin from "./DialogCreateAdmin";
+import AdminMoreMenu from "@/components/auth/admin/AdminMoreMenu";
+import DialogCreateAdmin from "@/components/auth/admin/DialogCreateAdmin";
 
 const TABLE_HEAD = [
   { id: "admin_email", label: "อีเมล", alignRight: false },

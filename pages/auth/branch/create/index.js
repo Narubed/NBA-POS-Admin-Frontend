@@ -33,7 +33,7 @@ import dayjs from "dayjs";
 import Swal from "sweetalert2";
 
 import imagesicon from "../../../../public/images/NoImage.png";
-import headleSubmit from "./headleSubmit";
+import headleSubmit from "@/components/auth/branch/create/headleSubmit";
 
 const ImgStyled = styled("img")(({ theme }) => ({
   width: "20%",

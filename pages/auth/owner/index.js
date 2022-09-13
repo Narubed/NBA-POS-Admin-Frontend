@@ -27,7 +27,7 @@ import Scrollbar from "@/lib/table/Scrollbar";
 import ListHead from "@/lib/table/ListHead";
 import ListToolbar from "@/lib/table/ListToolbar";
 import SearchNotFound from "@/lib/table/SearchNotFound";
-import OwnerMoreMenu from "./OwnerMoreMenu";
+import OwnerMoreMenu from "@/components/auth/owner/OwnerMoreMenu";
 
 const TABLE_HEAD = [
   { id: "owner_name", label: "ชื่อ", alignRight: true },
