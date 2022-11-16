@@ -91,11 +91,16 @@ export default function LoginForm() {
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={3}>
-        <RHFTextField name="email" label="Email address" />
+        <RHFTextField
+          sx={{ input: { color: "#FFFFFF" } }}
+          name="email"
+          label={<a style={{ color: "#FFFFFF" }}>Email address</a>}
+        />
 
         <RHFTextField
           name="password"
-          label="Password"
+          sx={{ input: { color: "#FFFFFF" } }}
+          label={<a style={{ color: "#FFFFFF" }}>Password</a>}
           type={showPassword ? "text" : "password"}
           InputProps={{
             endAdornment: (
@@ -127,6 +132,7 @@ export default function LoginForm() {
         type="submit"
         variant="contained"
         loading={isSubmitting}
+        color="info"
       >
         เข้าสู่ระบบ
       </LoadingButton>

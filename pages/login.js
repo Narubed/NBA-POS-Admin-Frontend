@@ -4,10 +4,17 @@ import { Container, Typography } from "@mui/material";
 
 import { LoginForm } from "../sections/auth/login";
 import useCurrentUser from "@/lib/hook/useCurrentUser";
+import bgimage from "../public/images/Background/bglogin3.png";
 
 const RootStyle = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
-    display: "flex",
+    backgroundImage: `url(${bgimage.src})`,
+    backgroundSize: "cover",
+    height: "100vh",
+    padding: 5,
+    backgroundAttachment: "fixed",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "top",
   },
 }));
 
@@ -44,15 +51,15 @@ export default function Login() {
 
   return (
     <RootStyle>
-      <HeaderStyle>เอาไว้ใส่โลโก้</HeaderStyle>
+      {/* <HeaderStyle>เอาไว้ใส่โลโก้</HeaderStyle> */}
 
       <Container maxWidth="sm">
         <ContentStyle>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" gutterBottom sx={{ color: "#FFFFFF" }}>
             ยินดีต้อนรับสู่
           </Typography>
 
-          <Typography sx={{ color: "text.secondary", mb: 5 }}>
+          <Typography sx={{ color: "text.secondary", mb: 5, color: "#FFFFFF" }}>
             ระบบจัดการข้อมูล POS.
           </Typography>
 
