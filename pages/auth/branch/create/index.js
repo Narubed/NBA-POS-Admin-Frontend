@@ -6,6 +6,9 @@ import { useRouter } from "next/router";
 import useCurrentUser from "@/lib/hook/useCurrentUser";
 import { LoadingButton } from "@mui/lab";
 import { useSelector, useDispatch } from "react-redux";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 
 import {
   Stack,
@@ -76,6 +79,7 @@ export default function edit() {
     branch_vat_name: "",
     branch_vat_number: "ไม่มี",
     branch_vat_address: "",
+    branch_date_end: "",
   });
 
   useEffect(() => {
@@ -288,6 +292,28 @@ export default function edit() {
                     />
                   </FormControl>
                 </Box>
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <MobileDatePicker
+                    label="วันที่หมดสัญญา"
+                    value={values.branch_date_end}
+                    defaultValue={values.branch_date_end}
+                    onChange={(newValue) => {
+                      setValues({
+                        ...values,
+                        branch_date_end: dayjs(newValue).format(),
+                      });
+                    }}
+                    renderInput={(params) => (
+                      <TextField
+                        variant="standard"
+                        fullWidth
+                        sx={{ m: 1 }}
+                        {...params}
+                      />
+                    )}
+                  />
+                </LocalizationProvider>
+
                 <FormControlLabel
                   control={<Switch checked={values.branch_status} />}
                   defaultValue={values.branch_status}

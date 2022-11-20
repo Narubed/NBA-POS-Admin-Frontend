@@ -44,7 +44,6 @@ export default function edit() {
     owner_address: "",
     owner_status: true,
     owner_date_start: Date.now(),
-    owner_date_end: Date.now(),
   });
 
   const handleChange = (prop) => (event) => {
@@ -60,7 +59,6 @@ export default function edit() {
       owner_address: values.owner_address,
       owner_status: values.owner_status,
       owner_date_start: dayjs(values.owner_date_start).format(),
-      owner_date_end: dayjs(values.owner_date_end).format(),
     };
     Swal.fire({
       title: "ยืนยันการเพิ่ม?",
@@ -215,27 +213,6 @@ export default function edit() {
                         setValues({
                           ...values,
                           owner_date_start: dayjs(newValue).format(),
-                        });
-                      }}
-                      renderInput={(params) => (
-                        <TextField
-                          variant="standard"
-                          fullWidth
-                          sx={{ m: 1 }}
-                          {...params}
-                        />
-                      )}
-                    />
-                  </LocalizationProvider>
-                  <LocalizationProvider dateAdapter={AdapterDateFns}>
-                    <MobileDatePicker
-                      label="วันที่หมดสัญญา"
-                      value={values.owner_date_end}
-                      defaultValue={values.owner_date_end}
-                      onChange={(newValue) => {
-                        setValues({
-                          ...values,
-                          owner_date_end: dayjs(newValue).format(),
                         });
                       }}
                       renderInput={(params) => (

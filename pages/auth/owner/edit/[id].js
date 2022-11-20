@@ -42,7 +42,6 @@ export default function edit() {
     owner_address: "",
     owner_status: true,
     owner_date_start: "",
-    owner_date_end: "",
   });
 
   useEffect(() => {
@@ -66,7 +65,6 @@ export default function edit() {
       owner_address: values.owner_address,
       owner_status: values.owner_status,
       owner_date_start: dayjs(values.owner_date_start).format(),
-      owner_date_end: dayjs(values.owner_date_end).format(),
     };
     console.log(dataEdit);
     Swal.fire({
@@ -222,27 +220,7 @@ export default function edit() {
                       )}
                     />
                   </LocalizationProvider>
-                  <LocalizationProvider dateAdapter={AdapterDateFns}>
-                    <MobileDatePicker
-                      label="วันที่หมดสัญญา"
-                      value={values.owner_date_end}
-                      defaultValue={values.owner_date_end}
-                      onChange={(newValue) => {
-                        setValues({
-                          ...values,
-                          owner_date_end: dayjs(newValue).format(),
-                        });
-                      }}
-                      renderInput={(params) => (
-                        <TextField
-                          variant="standard"
-                          fullWidth
-                          sx={{ m: 1 }}
-                          {...params}
-                        />
-                      )}
-                    />
-                  </LocalizationProvider>
+             
                 </Box>
                 <FormControlLabel
                   control={<Switch checked={values.owner_status} />}

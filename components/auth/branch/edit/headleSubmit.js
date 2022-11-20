@@ -24,6 +24,7 @@ function headleSubmit({
       formData.append("branch_vat_name", values.branch_vat_name);
       formData.append("branch_vat_number", values.branch_vat_number);
       formData.append("branch_vat_address", values.branch_vat_address);
+      formData.append("branch_date_end", values.branch_date_end);
       formData.append("branch_image", file);
     } else {
       formData.append("branch_name", values.branch_name);
@@ -33,6 +34,7 @@ function headleSubmit({
       formData.append("branch_vat_name", "ไม่มี");
       formData.append("branch_vat_number", values.branch_vat_number);
       formData.append("branch_vat_address", values.branch_vat_address);
+      formData.append("branch_date_end", values.branch_date_end);
       formData.append("branch_image", file);
     }
     console.log(formData);
@@ -90,6 +92,7 @@ function headleSubmit({
         branch_vat_name: values.branch_vat_name,
         branch_vat_number: values.branch_vat_number,
         branch_vat_address: values.branch_vat_address,
+        branch_date_end: values.branch_date_end,
       };
     } else {
       dataPut = {
@@ -100,6 +103,7 @@ function headleSubmit({
         branch_vat_name: "ไม่มี",
         branch_vat_number: values.branch_vat_number,
         branch_vat_address: values.branch_vat_address,
+        branch_date_end: values.branch_date_end,
       };
     }
     Swal.fire({

@@ -38,7 +38,8 @@ const TABLE_HEAD = [
   { id: "owner_name", label: "ชื่อเจ้าของ", alignRight: false },
   { id: "branch_status", label: "สถานะ", alignRight: true },
   { id: "owner_status", label: "สถานะ", alignRight: true },
-  { id: "branch_vat_address", label: "ที่อยู่สาขา", alignRight: false },
+  { id: "branch_date_end", label: "วันที่หมดสัญญา", alignRight: false },
+
   { id: "" },
 ];
 function descendingComparator(a, b, orderBy) {
@@ -222,7 +223,7 @@ export default function Blogs() {
                             branch_status_vat,
                             branch_vat_name,
                             branch_vat_number,
-                            branch_vat_address,
+                            branch_date_end,
                             branch_withholding_tax,
                           } = row;
                           const isItemSelected = selected.indexOf(_id) !== -1;
@@ -317,7 +318,19 @@ export default function Blogs() {
                                   }}
                                 />
                               </TableCell>
-                              <TableCell>{branch_vat_address}</TableCell>
+
+                              <TableCell>
+                                {dayjs(branch_date_end)
+                                  .add(543, "year")
+                                  .locale("th")
+                                  .format("DD MMM YYYY")}
+                                <br />
+
+                                {dayjs(branch_date_end).format() <
+                                  dayjs(Date.now()).format() && (
+                                  <Chip label=" หมดสัญญาเเล้ว" color="error" />
+                                )}
+                              </TableCell>
                               <TableCell>
                                 <BranchMoreMenu
                                   row={row}

@@ -35,7 +35,6 @@ const TABLE_HEAD = [
   { id: "owner_address", label: "ที่อยู่", alignRight: true },
   { id: "owner_status", label: "สถานะ", alignRight: false },
   { id: "owner_date_start", label: "วันที่ลงทะเบียน", alignRight: false },
-  { id: "owner_date_end", label: "วันที่หมดสัญญา", alignRight: false },
   { id: "" },
 ];
 function descendingComparator(a, b, orderBy) {
@@ -211,7 +210,6 @@ export default function Blogs() {
                           const {
                             _id,
                             owner_date_start,
-                            owner_date_end,
                             owner_name,
                             owner_phone,
                             owner_address,
@@ -252,17 +250,7 @@ export default function Blogs() {
                                   .locale("th")
                                   .format("DD MMM YYYY")}
                               </TableCell>
-                              <TableCell>
-                                {dayjs(owner_date_end)
-                                  .add(543, "year")
-                                  .locale("th")
-                                  .format("DD MMM YYYY")}
-
-                                {dayjs(owner_date_end).format() <
-                                  dayjs(Date.now()).format() && (
-                                  <Chip label=" หมดสัญญาเเล้ว" color="error" />
-                                )}
-                              </TableCell>
+                             
                               <TableCell>
                                 <OwnerMoreMenu
                                   row={row}

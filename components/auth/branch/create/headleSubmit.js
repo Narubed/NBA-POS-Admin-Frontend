@@ -13,6 +13,7 @@ function headleSubmit({ values, file, router, token, isSelectedOwner }) {
       formData.append("branch_vat_name", values.branch_vat_name);
       formData.append("branch_vat_number", values.branch_vat_number);
       formData.append("branch_vat_address", values.branch_vat_address);
+      formData.append("branch_date_end", values.branch_date_end);
       formData.append("branch_image", file);
     } else {
       formData.append("branch_owner_id", isSelectedOwner._id);
@@ -23,6 +24,7 @@ function headleSubmit({ values, file, router, token, isSelectedOwner }) {
       formData.append("branch_vat_name", "ไม่มี");
       formData.append("branch_vat_number", values.branch_vat_number);
       formData.append("branch_vat_address", values.branch_vat_address);
+      formData.append("branch_date_end", values.branch_date_end);
       formData.append("branch_image", file);
     }
 

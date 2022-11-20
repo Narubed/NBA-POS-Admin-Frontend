@@ -75,6 +75,7 @@ export default function edit() {
     branch_vat_name: "",
     branch_vat_number: "",
     branch_vat_address: "",
+    branch_date_end: "",
   });
 
   useEffect(() => {
@@ -251,6 +252,28 @@ export default function edit() {
                     />
                   </FormControl>
                 </Box>
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <MobileDatePicker
+                    label="วันที่หมดสัญญา"
+                    value={values.branch_date_end}
+                    defaultValue={values.branch_date_end}
+                    onChange={(newValue) => {
+                      setValues({
+                        ...values,
+                        branch_date_end: dayjs(newValue).format(),
+                      });
+                    }}
+                    renderInput={(params) => (
+                      <TextField
+                        variant="standard"
+                        fullWidth
+                        sx={{ m: 1 }}
+                        {...params}
+                      />
+                    )}
+                  />
+                </LocalizationProvider>
+
                 <FormControlLabel
                   control={<Switch checked={values.branch_status} />}
                   defaultValue={values.branch_status}
