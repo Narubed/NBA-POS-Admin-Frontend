@@ -17,6 +17,7 @@ import DraftsIcon from "@mui/icons-material/Drafts";
 import Link from "next/link";
 import useCurrentUser from "@/lib/hook/useCurrentUser";
 
+
 export default function ButtonAppBar() {
   const [drawer, setDrawer] = useState(false);
   const { currentUser, logout } = useCurrentUser();
@@ -24,6 +25,7 @@ export default function ButtonAppBar() {
     <>
       {currentUser && (
         <Box sx={{ flexGrow: 1 }}>
+
           <AppBar position="static">
             <Toolbar variant="dense">
               <IconButton

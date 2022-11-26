@@ -8,7 +8,7 @@ import useCurrentUser from "@/lib/hook/useCurrentUser";
 //
 import DashboardNavbar from "./dashboard/DashboardNavbar";
 import DashboardSidebar from "./dashboard/DashboardSidebar";
-
+import Loading from "./Loading";
 // ----------------------------------------------------------------------
 
 const APP_BAR_MOBILE = 64;
@@ -47,6 +47,7 @@ export default function DashboardLayout({ children }) {
     <>
       {currentUser ? (
         <RootStyle>
+          <Loading />
           <DashboardNavbar onOpenSidebar={() => setOpen(true)} />
           <DashboardSidebar
             isOpenSidebar={open}
