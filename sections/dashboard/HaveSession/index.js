@@ -51,8 +51,8 @@ function HaveSession() {
   const fetchAdvert = async () => {
     const url = `${process.env.NEXT_PUBLIC_ADMIN_POS_BACKEND}/advert`;
     fetcherWithToken(url, { method: "GET" }).then((json) => {
-      setIdAdvert(json.data._id);
-      setImages(json.data.advert_images);
+      setIdAdvert(json.data?._id);
+      setImages(json.data?.advert_images);
     });
   };
 
@@ -164,7 +164,7 @@ function HaveSession() {
             </FormControl>
           </ListItem>
         </Grid>
-        {isImages.map((item) => (
+        {isImages?.map((item) => (
           <Grid item xs={4} key={item}>
             {" "}
             <Box
